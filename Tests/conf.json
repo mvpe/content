@@ -276,6 +276,10 @@
             "playbookID": "ConvertKeysToTableFieldFormat_Test"
         },
         {
+            "integrations": "CVESearch_V2",
+            "playbookID": "CVE-Search-Test"
+        },
+        {
             "integrations": "CVE Search",
             "playbookID": "cveReputation Test"
         },

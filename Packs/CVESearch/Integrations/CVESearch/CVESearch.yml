@@ -1,0 +1,100 @@
+category: Vulnerability Management
+commonfields:
+  id: CVESearch_V2
+  version: -1
+configuration:
+  - defaultvalue: http://cve.circl.lu/api/
+    display: Server URL
+    name: url
+    required: true
+    type: 0
+description: Search CVE Information - powered by circl.lu
+display: CVE Search V2
+name: CVESearch_V2
+script:
+  commands:
+    - arguments:
+        - default: true
+          description: A comma separated list of CVE IDs to search.
+          isArray: true
+          name: cve_id
+          required: true
+          secret: false
+      deprecated: false
+      description: Search CVE by ID
+      execution: false
+      name: cve-search
+      outputs:
+        - contextPath: CVE.ID
+          description: The ID of the CVE.
+          type: String
+        - contextPath: CVE.CVSS
+          description: The CVSS score of the CVE.
+          type: String
+        - contextPath: CVE.Published
+          description: The date the CVE was published.
+          type: Date
+        - contextPath: CVE.Modified
+          description: The date the CVE was last modified.
+          type: Date
+        - contextPath: CVE.Description
+          description: The description of the CVE.
+          type: String
+    - deprecated: false
+      description: Retruns the latest updated CVEs.
+      execution: false
+      name: cve-latest
+      outputs:
+        - contextPath: CVE.ID
+          description: The ID of the CVE.
+          type: String
+        - contextPath: CVE.CVSS
+          description: The CVSS score of the CVE.
+          type: String
+        - contextPath: CVE.Published
+          description: The date the CVE was published.
+          type: Date
+        - contextPath: CVE.Modified
+          description: When CVE was last modified.
+          type: Date
+        - contextPath: CVE.Description
+          description: The description of the CVE.
+          type: String
+    - arguments:
+        - default: true
+          description: CVE ID.
+          isArray: false
+          name: cve_id
+          required: true
+          secret: false
+      deprecated: false
+      description: Returns CVE information by CVE ID.
+      execution: false
+      name: cve
+      outputs:
+        - contextPath: CVE.ID
+          description: The ID of the CVE.
+          type: String
+        - contextPath: CVE.CVSS
+          description: The CVSS score of the CVE.
+          type: String
+        - contextPath: CVE.Published
+          description: The date the CVE was published.
+          type: Date
+        - contextPath: CVE.Modified
+          description: The date the CVE was last modified.
+          type: Date
+        - contextPath: CVE.Description
+          description: The description of the CVE.
+          type: String
+  dockerimage: demisto/python3:3.7.4.2245
+  feed: false
+  isfetch: false
+  longRunning: false
+  longRunningPort: false
+  runonce: false
+  script: '-'
+  subtype: python3
+  type: python
+tests:
+  - "CVE-Search-Test"
