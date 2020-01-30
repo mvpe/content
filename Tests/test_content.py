@@ -904,6 +904,12 @@ def manage_tests(tests_settings):
 def main():
     print("Time is: {}\n\n\n".format(datetime.now()))
     tests_settings = options_handler()
+    if 'master' in tests_settings.serverVersion.lower():
+        import time;
+        time.sleep(150)
+        print('slept for 150 secs')
+        time.sleep(150)
+        print('slept for 150 secs')
     manage_tests(tests_settings)
 
 
