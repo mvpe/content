@@ -5,7 +5,7 @@ demisto-sdk==0.3.6
 pytest==5.2.1
 pytest-mock==1.11.1
 ruamel.yaml==0.16.5
-pipenv==2018.11.26
+pipenv==2022.1.8
 autopep8==1.4.4
 mypy==0.761
 beautifulsoup4==4.8.1
