@@ -12,3 +12,5 @@ beautifulsoup4==4.8.1
 pypdf2==1.26.0
 requests-mock==1.7.0
 freezegun==0.3.12
+requests>=2.32.4 # not directly required, pinned by Snyk to avoid a vulnerability
+urllib3>=2.5.0 # not directly required, pinned by Snyk to avoid a vulnerability
